@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Paleta de colores
+            </h2>
+            <div style="display: flex;">
+                <div style="display: flex;flex-direction: column;">
+                    <button id="btn-1" style="background-color: #e53e3e; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-2" style="background-color: #dd6b20; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-3" style="background-color: #faf089; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-4" style="background-color: #48bb78; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-5" style="background-color: #81e6d9; width:100px;height: 100px" type="button">
+                    </button>
+                    <button id="btn-6" style="background-color: #d53f8c; width:100px;height: 100px" type="button">
+                    </button>
+                </div>
+                <div style="width: 500px;height: 600px">
+                    <div id="caja" style="border:1px solid black;width: 100%;height: 100%; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Color Rojo!
+        let red = document.querySelector("#btn-1")
+        const cambiarRed = () => {
+            document.querySelector("#caja").style.backgroundColor = "#e53e3e";
+        }
+        red.addEventListener('click', cambiarRed);
+
+        // Color Naranja!!
+        let orange = document.querySelector("#btn-2")
+        const cambiarOrange = () => {
+            document.querySelector("#caja").style.backgroundColor = "#dd6b20";
+        }
+        orange.addEventListener('click', cambiarOrange);
+
+        // Color Amarillo!
+        let yellow = document.querySelector("#btn-3")
+        const cambiarYellow = () => {
+            document.querySelector("#caja").style.backgroundColor = "#faf089";
+        }
+        yellow.addEventListener('click', cambiarYellow);
+
+        // Color Verde!
+        let green = document.querySelector("#btn-4")
+        const cambiarGreen = () => {
+            document.querySelector("#caja").style.backgroundColor = "#48bb78";
+        }
+        green.addEventListener('click', cambiarGreen);
+
+        // Color Celeste!
+        let sky = document.querySelector("#btn-5")
+        const cambiarSky = () => {
+            document.querySelector("#caja").style.backgroundColor = "#81e6d9";
+        }
+        sky.addEventListener('click', cambiarSky);
+
+        // Color Morado!
+        let purple = document.querySelector("#btn-6")
+        const cambiarPurple = () => {
+            document.querySelector("#caja").style.backgroundColor = "#d53f8c";
+        }
+        purple.addEventListener('click', cambiarPurple);
+
+        const cambiarColor = (color) => {
+            switch (color) {
+                case red:
+                    document.querySelector("#caja").style.backgroundColor = "#e53e3e";
+                    break;
+                case orange:
+                    document.querySelector("#caja").style.backgroundColor = "#dd6b20";
+                    break;
+                case yellow:
+                    document.querySelector("#caja").style.backgroundColor = "#faf089";
+                    break;
+                case green:
+                    document.querySelector("#caja").style.backgroundColor = "#48bb78";
+                    break;
+                case sky:
+                    document.querySelector("#caja").style.backgroundColor = "#81e6d9";
+                    break;
+                case purple:
+                    document.querySelector("#caja").style.backgroundColor = "#d53f8c";
+                    break;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
