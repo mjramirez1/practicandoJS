@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,11 @@
             </h2>
             <div class="resultado" style="color:green;font-style: italic">
             </div>
+
             <form id="formulario">
+
                 <div>
+
                     <div style="display: flex;flex-direction: column;">
                         <label>
                             Nombre completo
@@ -23,6 +26,7 @@
                         <input id="nombre" type="text">
                         <p class="errorNombre" style="color:red;font-style: italic;"></p>
                     </div>
+
                     <div style="display: flex;flex-direction: column;">
                         <label>
                             Asunto
@@ -30,7 +34,9 @@
                         <input id="asunto" type="text">
                         <p class="errorAsunto" style="color:red;font-style: italic;"></p>
                     </div>
+
                 </div>
+
                 <div style="display: flex;flex-direction: column;">
                     <label>
                         Mensaje
@@ -38,6 +44,7 @@
                     <textarea id="mensaje"></textarea>
                     <p class="errorMensaje" style="color:red;font-style: italic;"></p>
                 </div>
+
                 <div>
                     <button id="botton" type="submit">
                         Envíar mensaje
@@ -46,8 +53,59 @@
             </form>
         </div>
     </div>
-    <script>
-    // Escríbe aquí tu código
+
+    <script>// mi codigo
+
+        const form = document.getElementById("formulario");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            limpiarErrores();
+            let nombre = document.querySelector("#nombre").value;
+            let asunto = document.querySelector("#asunto").value;
+            let mensaje = document.querySelector("#mensaje").value;
+
+            let resultado = validar(nombre, asunto, mensaje);
+
+            if (resultado === true) {
+                exito();
+            };
+
+        });
+        function limpiarErrores() {
+            document.querySelector(".errorNombre").innerHTML = ""
+            document.querySelector(".errorAsunto").innerHTML = ""
+            document.querySelector(".errorMensaje").innerHTML = ""
+        }
+        function exito() {
+            document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito";
+        };
+        function validar(nombre, asunto, mensaje) {
+            let pasamosLaValidacion = true;
+            let validacion = /[a-zA-Z]/gim;
+
+            
+            if (validacion.test(nombre) == false) {
+                document.querySelector(".errorNombre").innerHTML = "El nombre es requerido.";
+                document.querySelector("#nombre").value = ""
+                pasamosLaValidacion = false;
+            }    
+            if (validacion.test(asunto) == false) {
+            document.querySelector(".errorAsunto").innerHTML = "El asunto es requerido.";
+            document.querySelector("#asunto").value = ""
+            pasamosLaValidacion = false;
+            }
+            if (validacion.test(mensaje) == false) {
+            document.querySelector(".errorMensaje").innerHTML = "El mensaje es requerido.";
+            document.querySelector("#mensaje").value = ""
+            pasamosLaValidacion = false;
+            }
+            if (validacion.test(nombre) == false || validacion.test(asunto) == false || validacion.test(mensaje) == false){
+                document.querySelector(".resultado").innerHTML = "";
+            }
+
+                return pasamosLaValidacion;
+        }
+
     </script>
 </body>
 

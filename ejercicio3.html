@@ -35,23 +35,23 @@
         </div>
     </div>
     <script>
-    const suma = document.querySelector("#btn-sumar");
-    suma.addEventListener("click", function (event) {
+    const suma = document.querySelector("#btn-sumar"); // Asignando a la constante el queryselector
+    suma.addEventListener("click", function (event) { // Procedemos a activar la funcion adentro del eventListener
         const num1 = document.querySelector("#valor1").value;
         const num2 = document.querySelector("#valor2").value;
-        const resultado = parseInt(num1) + parseInt(num2);
+        const resultado = parseInt(num1) + parseInt(num2); // Realizamos un parseInt para los valores extraidos y con ellos realizamos la operacion para el resultado
         document.querySelector(".resultado").innerHTML = resultado;
     });
 
-    const resta = document.querySelector("#btn-restar");
-    resta.addEventListener("click", function (event) {
+    const resta = document.querySelector("#btn-restar"); // Asignando a la constante el queryselector
+    resta.addEventListener("click", function (event) { // Procedemos a activar la funcion adentro del eventListener
         const num1 = document.querySelector("#valor1").value;
         const num2 = document.querySelector("#valor2").value;
-        const resultado = parseInt(num1) - parseInt(num2);
-        if (resta < 1){
-            document.querySelector(".resultado").innerHTML = 0;
-        } else {
+        const resultado = parseInt(num1) - parseInt(num2); // Realizamos un parseInt para los valores extraidos y con ellos realizamos la operacion para el resultado
+        if (resultado >= 1){
             document.querySelector(".resultado").innerHTML = resultado;
+        } else {
+            document.querySelector(".resultado").innerHTML = 0;
         }
 
     });
