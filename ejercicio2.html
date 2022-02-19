@@ -35,56 +35,53 @@
         </div>
     </div>
     <script>
-        // Color Rojo!
-        let red = document.querySelector("#btn-1")
-        red.addEventListener('click', cambiarColor(rojo));
-
-        // Color Naranja!!
-        let orange = document.querySelector("#btn-2")
-        orange.addEventListener('click', cambiarColor(naranja));
-
-        // Color Amarillo!
-        let yellow = document.querySelector("#btn-3")
-        yellow.addEventListener('click', cambiarColor(amarillo));
-
-        // Color Verde!
-        let green = document.querySelector("#btn-4")
-        green.addEventListener('click', cambiarColor(verde));
-
-        // Color Celeste!
-        let sky = document.querySelector("#btn-5")
-        sky.addEventListener('click', cambiarColor(celeste));
-
-        // Color Morado!
-        let purple = document.querySelector("#btn-6")
-        purple.addEventListener('click', cambiarColor(morado));
-
-        let cambiarColor = (color) => {
+        const cambiarColor = (color) => {
             switch (color) {
-                case rojo:
+                case "rojo":
                     document.querySelector("#caja").style.backgroundColor = "#e53e3e";
                     break;
-                case naranja:
+                case "naranja":
                     document.querySelector("#caja").style.backgroundColor = "#dd6b20";
                     break;
-                case amarillo:
+                case "amarillo":
                     document.querySelector("#caja").style.backgroundColor = "#faf089";
                     break;
-                case verde:
+                case "verde":
                     document.querySelector("#caja").style.backgroundColor = "#48bb78";
                     break;
-                case celeste:
+                case "celeste":
                     document.querySelector("#caja").style.backgroundColor = "#81e6d9";
                     break;
-                case morado:
+                case "morado":
                     document.querySelector("#caja").style.backgroundColor = "#d53f8c";
                     break;
             }
         }
+        // Color Rojo!
+        let red = document.querySelector("#btn-1");
+        red.addEventListener('click', () => cambiarColor("rojo")); // Luego del Click, se llama al event el cual contiene dentro debido al arrow function la nueva funcion de cambiar color que recibe el parametro para el cambio de color
 
+        // Color Naranja!!
+        let orange = document.querySelector("#btn-2");
+        orange.addEventListener('click', () => cambiarColor("naranja"));
+
+        // Color Amarillo!
+        let yellow = document.querySelector("#btn-3");
+        yellow.addEventListener('click', () => cambiarColor("amarillo"));
+
+        // Color Verde!
+        let green = document.querySelector("#btn-4");
+        green.addEventListener('click', () => cambiarColor("verde"));
+
+        // Color Celeste!
+        let sky = document.querySelector("#btn-5");
+        sky.addEventListener('click', () => cambiarColor("celeste"));
+
+        // Color Morado!
+        let purple = document.querySelector("#btn-6");      
+        purple.addEventListener('click', () => cambiarColor("morado"));
 
 
     </script>
 </body>
-
 </html>
