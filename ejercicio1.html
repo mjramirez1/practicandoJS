@@ -56,7 +56,7 @@
 
     <script>// mi codigo
 
-        const form = document.getElementById("formulario");
+        const form = document.getElementById("formulario"); //activación de evento listener
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             limpiarErrores();
@@ -71,19 +71,19 @@
             };
 
         });
-        function limpiarErrores() {
+        function limpiarErrores() { //limpieza de errores
             document.querySelector(".errorNombre").innerHTML = ""
             document.querySelector(".errorAsunto").innerHTML = ""
             document.querySelector(".errorMensaje").innerHTML = ""
         }
         function exito() {
-            document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito";
+            document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito"; //funcion resultado exitoso
         };
         function validar(nombre, asunto, mensaje) {
             let pasamosLaValidacion = false;
             let validacion = /[!@#$%¨&*()-=+/*.{}]/gim; // Verifica todos los numeros y caracteres especiales 
 
-            // Luego se procede a verificar, si es cierto que hay numeros o caracteres especiales se manda el mensaje de error
+            // Luego se procede a verificar
             if (validacion.test(nombre) === true || document.querySelector("#nombre").value === "") {
                 document.querySelector(".errorNombre").innerHTML = "El nombre es requerido.";
                 document.querySelector("#nombre").value = ""
