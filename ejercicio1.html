@@ -66,7 +66,7 @@
 
             let resultado = validar(nombre, asunto, mensaje);
 
-            if (resultado === true) {
+            if (resultado === false) {
                 exito();
             };
 
@@ -80,32 +80,30 @@
             document.querySelector(".resultado").innerHTML = "Mensaje enviado con éxito";
         };
         function validar(nombre, asunto, mensaje) {
-            let pasamosLaValidacion = true;
-            let validacion = /[a-zA-Z]/gim;
+            let pasamosLaValidacion = false;
+            let validacion = /[!@#$%¨&*()-=+/*.{}]/gim; // Verifica todos los numeros y caracteres especiales 
 
-            
-            if (validacion.test(nombre) == false) {
+            // Luego se procede a verificar, si es cierto que hay numeros o caracteres especiales se manda el mensaje de error
+            if (validacion.test(nombre) === true || document.querySelector("#nombre").value === "") {
                 document.querySelector(".errorNombre").innerHTML = "El nombre es requerido.";
                 document.querySelector("#nombre").value = ""
-                pasamosLaValidacion = false;
+                pasamosLaValidacion = true;
             }    
-            if (validacion.test(asunto) == false) {
+            if (validacion.test(asunto) === true || document.querySelector("#asunto").value === "") {
             document.querySelector(".errorAsunto").innerHTML = "El asunto es requerido.";
             document.querySelector("#asunto").value = ""
-            pasamosLaValidacion = false;
+            pasamosLaValidacion = true;
             }
-            if (validacion.test(mensaje) == false) {
+            if (validacion.test(mensaje) === true || document.querySelector("#mensaje").value === "") {
             document.querySelector(".errorMensaje").innerHTML = "El mensaje es requerido.";
             document.querySelector("#mensaje").value = ""
-            pasamosLaValidacion = false;
+            pasamosLaValidacion = true;
             }
-            if (validacion.test(nombre) == false || validacion.test(asunto) == false || validacion.test(mensaje) == false){
+            if (pasamosLaValidacion === true){
                 document.querySelector(".resultado").innerHTML = "";
             }
-
-                return pasamosLaValidacion;
+            return pasamosLaValidacion;
         }
-
     </script>
 </body>
 
